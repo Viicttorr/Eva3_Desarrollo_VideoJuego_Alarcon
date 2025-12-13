@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcg4s3l4gf44i"]
+
+[ext_resource type="PackedScene" uid="uid://2rv623ncoqe2" path="res://Escenas/stage_2.tscn" id="1_5p2ut"]
+[ext_resource type="Script" uid="uid://b4aymlnk3oaqr" path="res://Scripts/escena_principal_2.gd" id="1_kd1iv"]
+[ext_resource type="PackedScene" uid="uid://g5uchuf3dvs7" path="res://Escenas/Jugador.tscn" id="2_jv5uj"]
+[ext_resource type="PackedScene" uid="uid://uou0joe7ki5h" path="res://Escenas/hud.tscn" id="3_jv5uj"]
+[ext_resource type="PackedScene" uid="uid://chnpccbgntkw8" path="res://Escenas/enemy_skeleton.tscn" id="4_u2ixx"]
+[ext_resource type="PackedScene" uid="uid://bt7b7blpncbnt" path="res://Escenas/entrada_castillo.tscn" id="6_buxwl"]
+
+[node name="Escena_Principal_2" type="Node2D"]
+script = ExtResource("1_kd1iv")
+
+[node name="Stage_2" parent="." instance=ExtResource("1_5p2ut")]
+position = Vector2(2, 1)
+
+[node name="Jugador" parent="." instance=ExtResource("2_jv5uj")]
+position = Vector2(31, 132)
+
+[node name="Camera_jugador" type="Camera2D" parent="Jugador"]
+zoom = Vector2(4, 2.88)
+limit_left = 0
+limit_top = 0
+limit_right = 2049
+limit_bottom = 224
+
+[node name="HUD" parent="." instance=ExtResource("3_jv5uj")]
+
+[node name="Enemy_Skeleton" parent="." instance=ExtResource("4_u2ixx")]
+position = Vector2(586, 207)
+
+[node name="Enemy_Skeleton2" parent="." instance=ExtResource("4_u2ixx")]
+position = Vector2(647, 209)
+
+[node name="Enemy_Skeleton3" parent="." instance=ExtResource("4_u2ixx")]
+position = Vector2(705, 209)
+
+[node name="Enemy_Skeleton4" parent="." instance=ExtResource("4_u2ixx")]
+position = Vector2(947, 205)
+
+[node name="Enemy_Skeleton5" parent="." instance=ExtResource("4_u2ixx")]
+position = Vector2(1016, 206)
+
+[node name="Enemy_Skeleton6" parent="." instance=ExtResource("4_u2ixx")]
+position = Vector2(1345, 210)
+
+[node name="Enemy_Skeleton7" parent="." instance=ExtResource("4_u2ixx")]
+position = Vector2(1436, 209)
+
+[node name="Enemy_Skeleton8" parent="." instance=ExtResource("4_u2ixx")]
+position = Vector2(1707, 209)
+
+[node name="Enemy_Skeleton9" parent="." instance=ExtResource("4_u2ixx")]
+position = Vector2(1840, 208)
+
+[node name="Enemy_Skeleton10" parent="." instance=ExtResource("4_u2ixx")]
+position = Vector2(1908, 209)
+
+[node name="Entrada_castillo" parent="." instance=ExtResource("6_buxwl")]
+position = Vector2(1999, 214)
+
+[node name="Timer_entradaCastillo" type="Timer" parent="Entrada_castillo"]
+one_shot = true
+
+[node name="Enemy_Skeleton11" parent="." instance=ExtResource("4_u2ixx")]
+position = Vector2(1167, 206)
+
+[connection signal="timeout" from="Entrada_castillo/Timer_entradaCastillo" to="Entrada_castillo" method="_on_timer_timeout"]

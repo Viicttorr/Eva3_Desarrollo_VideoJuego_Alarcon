@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc0hijjhg4f1m"]
+
+[ext_resource type="Texture2D" uid="uid://cmqbouf35wh70" path="res://Sprite/menus_principales/menu_victoria.png" id="1_3w505"]
+[ext_resource type="Script" uid="uid://dna2svd8r383m" path="res://Scripts/menu_victoria.gd" id="1_q6qao"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q6qao"]
+texture = ExtResource("1_3w505")
+
+[node name="Menu_victoria" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_q6qao")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_q6qao")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 902.0
+offset_top = 306.0
+offset_right = 1069.0
+offset_bottom = 347.0
+
+[node name="Button_start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.9361017, 0, 0.27276996, 1)
+theme_override_font_sizes/font_size = 20
+text = "Reiniciar Juego"
+
+[node name="Button_salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.82757306, 0, 0.21244174, 1)
+theme_override_font_sizes/font_size = 20
+text = "Salir"
+
+[connection signal="pressed" from="VBoxContainer/Button_start" to="." method="_on_button_victoria_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_salir" to="." method="_on_quit_victoria_pressed"]

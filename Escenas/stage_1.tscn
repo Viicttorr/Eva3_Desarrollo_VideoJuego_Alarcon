@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://o78oa03bmrro"]
+
+[ext_resource type="Texture2D" uid="uid://bual4ruq13yox" path="res://Sprite/escenarios/Stage-1.png" id="1_ndjlb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eof6k"]
+size = Vector2(2, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyxvp"]
+size = Vector2(3, 190)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttrvb"]
+size = Vector2(109, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxuff"]
+size = Vector2(61, 14.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7iaa"]
+size = Vector2(224, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndjlb"]
+size = Vector2(2, 57)
+
+[node name="Stage_1" type="StaticBody2D"]
+
+[node name="Sprite_suburbio" type="Sprite2D" parent="."]
+position = Vector2(512, 113)
+texture = ExtResource("1_ndjlb")
+
+[node name="Entorno" type="StaticBody2D" parent="."]
+collision_mask = 49
+
+[node name="Collision_suelo" type="CollisionPolygon2D" parent="Entorno"]
+polygon = PackedVector2Array(0, 202, 624, 203, 602, 224, 0, 224)
+
+[node name="Collision_limite_inicio" type="CollisionShape2D" parent="Entorno"]
+position = Vector2(0, 112)
+shape = SubResource("RectangleShape2D_eof6k")
+
+[node name="Collision_limite_final" type="CollisionShape2D" parent="Entorno"]
+position = Vector2(993.5, 96)
+shape = SubResource("RectangleShape2D_fyxvp")
+
+[node name="Escalera" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 33
+
+[node name="Collision_escala_1" type="CollisionPolygon2D" parent="Escalera"]
+polygon = PackedVector2Array(313, 98, 224, 186, 224, 193, 240, 193, 240, 193, 313, 118)
+one_way_collision = true
+
+[node name="Collision_escala_2" type="CollisionShape2D" parent="Escalera"]
+position = Vector2(367.5, 105.5)
+shape = SubResource("RectangleShape2D_ttrvb")
+one_way_collision = true
+
+[node name="Collision_escala_3" type="CollisionPolygon2D" parent="Escalera"]
+polygon = PackedVector2Array(422, 98, 511, 186, 511, 193, 511, 193, 496, 193, 422, 113)
+one_way_collision = true
+
+[node name="Puente" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="Collision_puente_1" type="CollisionShape2D" parent="Puente"]
+position = Vector2(703.5, 185.75)
+shape = SubResource("RectangleShape2D_kxuff")
+
+[node name="Collision_puente_2" type="CollisionShape2D" parent="Puente"]
+position = Vector2(882, 185)
+shape = SubResource("RectangleShape2D_v7iaa")
+
+[node name="Muros enemigos" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 17
+
+[node name="Muro_finalEnemigos" type="CollisionShape2D" parent="Muros enemigos"]
+position = Vector2(623, 176.5)
+shape = SubResource("RectangleShape2D_ndjlb")

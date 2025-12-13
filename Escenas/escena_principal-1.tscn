@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5nepc107nsfb"]
+
+[ext_resource type="PackedScene" uid="uid://o78oa03bmrro" path="res://Escenas/stage_1.tscn" id="1_vylv1"]
+[ext_resource type="Script" uid="uid://d12upsqu8ho0u" path="res://Scripts/escena_principal_1.gd" id="1_ya8sm"]
+[ext_resource type="PackedScene" uid="uid://g5uchuf3dvs7" path="res://Escenas/Jugador.tscn" id="2_r51ou"]
+[ext_resource type="PackedScene" uid="uid://r5ma6pa85jai" path="res://Escenas/bloque_piedra.tscn" id="3_r51ou"]
+[ext_resource type="PackedScene" uid="uid://drmq57w0p3wng" path="res://Escenas/area_deteccion.tscn" id="4_nc5dq"]
+[ext_resource type="PackedScene" uid="uid://lf7dhwteb7mu" path="res://Escenas/area_transicion.tscn" id="5_ul0xn"]
+[ext_resource type="PackedScene" uid="uid://uou0joe7ki5h" path="res://Escenas/hud.tscn" id="6_ul0xn"]
+[ext_resource type="PackedScene" uid="uid://chnpccbgntkw8" path="res://Escenas/enemy_skeleton.tscn" id="7_qkb62"]
+
+[node name="Escena_Principal_1" type="Node2D"]
+position = Vector2(-1, -1)
+script = ExtResource("1_ya8sm")
+
+[node name="Stage_1" parent="." instance=ExtResource("1_vylv1")]
+position = Vector2(-1, -1)
+
+[node name="Jugador" parent="." instance=ExtResource("2_r51ou")]
+position = Vector2(31, 138)
+
+[node name="Camera_jugador" type="Camera2D" parent="Jugador"]
+zoom = Vector2(4, 2.9)
+limit_left = 0
+limit_top = 0
+limit_right = 1024
+limit_bottom = 224
+
+[node name="Joint_agarre" type="PinJoint2D" parent="Jugador"]
+position = Vector2(-2, 34)
+
+[node name="Bloque_piedra" parent="." instance=ExtResource("3_r51ou")]
+position = Vector2(368, 71)
+
+[node name="Area_deteccion" parent="." instance=ExtResource("4_nc5dq")]
+position = Vector2(341, 147)
+
+[node name="Area_transicion" parent="." instance=ExtResource("5_ul0xn")]
+position = Vector2(901, 164)
+
+[node name="Timer_transicion" type="Timer" parent="Area_transicion"]
+one_shot = true
+
+[node name="HUD" parent="." instance=ExtResource("6_ul0xn")]
+
+[node name="Enemy_Skeleton" parent="." instance=ExtResource("7_qkb62")]
+position = Vector2(576, 195)
+
+[node name="Enemy_Skeleton2" parent="." instance=ExtResource("7_qkb62")]
+position = Vector2(370, 196)
+
+[node name="Enemy_Skeleton3" parent="." instance=ExtResource("7_qkb62")]
+position = Vector2(326, 195)
+
+[node name="Enemy_Skeleton4" parent="." instance=ExtResource("7_qkb62")]
+position = Vector2(527, 195)
+
+[connection signal="timeout" from="Area_transicion/Timer_transicion" to="Area_transicion" method="_on_timer_timeout"]

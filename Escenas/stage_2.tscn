@@ -1,0 +1,110 @@
+[gd_scene load_steps=13 format=3 uid="uid://2rv623ncoqe2"]
+
+[ext_resource type="Texture2D" uid="uid://b233hciqnglv1" path="res://Sprite/escenarios/Stage-2.png" id="1_aiyir"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oripm"]
+size = Vector2(256, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aiyir"]
+size = Vector2(82, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwqyx"]
+size = Vector2(32, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qstbo"]
+size = Vector2(30, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_305t1"]
+size = Vector2(3, 195)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0if61"]
+size = Vector2(4, 214)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34qw5"]
+size = Vector2(96, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhg1q"]
+size = Vector2(3, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28l4d"]
+size = Vector2(3, 85.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2gnm"]
+size = Vector2(3, 91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5ito"]
+size = Vector2(3, 91)
+
+[node name="Stage_2" type="StaticBody2D"]
+
+[node name="Sprite_patio_castillo" type="Sprite2D" parent="."]
+position = Vector2(1024, 112)
+texture = ExtResource("1_aiyir")
+
+[node name="Entorno" type="StaticBody2D" parent="."]
+collision_mask = 17
+
+[node name="Collision_suelo_1" type="CollisionPolygon2D" parent="Entorno"]
+polygon = PackedVector2Array(256, 213, 768, 213, 761, 223, 256, 223)
+
+[node name="Collision_suelo_2" type="CollisionPolygon2D" parent="Entorno"]
+polygon = PackedVector2Array(869, 212, 877, 223, 1527, 223, 1536, 213)
+
+[node name="Collision_suelo_3" type="CollisionPolygon2D" parent="Entorno"]
+polygon = PackedVector2Array(2014, 213, 1640, 213, 1648, 223, 2014, 223)
+
+[node name="Collision_plataforma_1" type="CollisionShape2D" parent="Entorno"]
+position = Vector2(128, 203)
+shape = SubResource("RectangleShape2D_oripm")
+
+[node name="Collision_plataforma_2" type="CollisionShape2D" parent="Entorno"]
+position = Vector2(234, 185)
+shape = SubResource("RectangleShape2D_aiyir")
+one_way_collision = true
+
+[node name="Collision_plataforma_3" type="CollisionShape2D" parent="Entorno"]
+position = Vector2(401, 179)
+shape = SubResource("RectangleShape2D_jwqyx")
+
+[node name="Collision_plataforma_5" type="CollisionPolygon2D" parent="Entorno"]
+polygon = PackedVector2Array(417, 128, 315, 128, 266, 177, 281, 177, 313, 144, 417, 144)
+one_way_collision = true
+
+[node name="Collision_Muro" type="CollisionShape2D" parent="Entorno"]
+position = Vector2(16, 64.5)
+shape = SubResource("RectangleShape2D_qstbo")
+
+[node name="Collision_limite_inicio" type="CollisionShape2D" parent="Entorno"]
+position = Vector2(0.5, 97.5)
+shape = SubResource("RectangleShape2D_305t1")
+
+[node name="Collision_limite_final" type="CollisionShape2D" parent="Entorno"]
+position = Vector2(2016, 107)
+shape = SubResource("RectangleShape2D_0if61")
+
+[node name="Plataforma" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="Collision_plataforma_4" type="CollisionShape2D" parent="Plataforma"]
+position = Vector2(497, 168.5)
+shape = SubResource("RectangleShape2D_34qw5")
+one_way_collision = true
+
+[node name="Muros_enemigos" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="Collision_1" type="CollisionShape2D" parent="Muros_enemigos"]
+position = Vector2(767.5, 172)
+shape = SubResource("RectangleShape2D_rhg1q")
+
+[node name="Collision_2" type="CollisionShape2D" parent="Muros_enemigos"]
+position = Vector2(870.5, 170.75)
+shape = SubResource("RectangleShape2D_28l4d")
+
+[node name="Collision_3" type="CollisionShape2D" parent="Muros_enemigos"]
+position = Vector2(1534.5, 169.5)
+shape = SubResource("RectangleShape2D_q2gnm")
+
+[node name="Collision_4" type="CollisionShape2D" parent="Muros_enemigos"]
+position = Vector2(1640.5, 169.5)
+shape = SubResource("RectangleShape2D_i5ito")

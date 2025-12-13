@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://n4ss7tuju5ir"]
+
+[ext_resource type="Script" uid="uid://oae84ka4tmo3" path="res://Scripts/llave_castillo.gd" id="1_m4a8m"]
+[ext_resource type="Texture2D" uid="uid://c0tnmnyhyf0yn" path="res://Sprite/llave_castillo/LLave_castilo.png" id="2_q12ys"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tpxj3"]
+radius = 5.0
+height = 14.0
+
+[node name="Llave_castillo" type="Area2D"]
+script = ExtResource("1_m4a8m")
+
+[node name="Sprite_llave" type="Sprite2D" parent="."]
+position = Vector2(7.000001, -9.000002)
+scale = Vector2(0.08035714, 0.07666667)
+texture = ExtResource("2_q12ys")
+
+[node name="Collision_llave" type="CollisionShape2D" parent="."]
+position = Vector2(7, -9)
+shape = SubResource("CapsuleShape2D_tpxj3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

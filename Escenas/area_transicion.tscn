@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://lf7dhwteb7mu"]
+
+[ext_resource type="Script" uid="uid://bph1clv0pd1k5" path="res://Scripts/area_transicion.gd" id="1_orx4r"]
+[ext_resource type="Texture2D" uid="uid://dan7gqbcjhhv0" path="res://Sprite/base_deteccion/base_negra_final.png" id="2_1did3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6oax1"]
+size = Vector2(21, 4)
+
+[node name="Area_transicion" type="Area2D"]
+script = ExtResource("1_orx4r")
+
+[node name="Sprite_baseTransicion" type="Sprite2D" parent="."]
+position = Vector2(75.5, 15.5)
+scale = Vector2(0.058, 0.026)
+texture = ExtResource("2_1did3")
+
+[node name="Collision_transicion" type="CollisionShape2D" parent="."]
+position = Vector2(75.5, 15)
+shape = SubResource("RectangleShape2D_6oax1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

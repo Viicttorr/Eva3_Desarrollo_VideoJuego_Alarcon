@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://uou0joe7ki5h"]
+
+[ext_resource type="Script" uid="uid://nu24385cfc20" path="res://Scripts/hud.gd" id="1_4nel0"]
+[ext_resource type="Texture2D" uid="uid://bv7xbdj0x4rwg" path="res://Sprite/llave_castillo/LLave_hud.png" id="2_v1vk6"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_4nel0")
+
+[node name="Numero" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(300, 50)
+offset_right = 40.0
+offset_bottom = 40.0
+bbcode_enabled = true
+autowrap_mode = 0
+
+[node name="LlaveIcono" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture = ExtResource("2_v1vk6")

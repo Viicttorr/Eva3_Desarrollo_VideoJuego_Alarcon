@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://5j60c1u0ih04"]
+
+[ext_resource type="Texture2D" uid="uid://ckcab75mvp2a7" path="res://Sprite/menus_principales/img_menu_principal.png" id="1_ft1ng"]
+[ext_resource type="Script" uid="uid://bgalye81t2bjb" path="res://Scripts/menu_principal.gd" id="1_qncgo"]
+[ext_resource type="FontFile" uid="uid://bmt4dywosjbuv" path="res://Font/Jacquard12-Regular.ttf" id="2_qncgo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bmgc8"]
+texture = ExtResource("1_ft1ng")
+
+[sub_resource type="LabelSettings" id="LabelSettings_d8lex"]
+font = ExtResource("2_qncgo")
+font_size = 120
+font_color = Color(0.6792569, 0.10102951, 0.1706405, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yo4kt"]
+font = ExtResource("2_qncgo")
+font_size = 45
+font_color = Color(0.8228541, 0, 0.1795406, 1)
+
+[node name="Menu_principal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qncgo")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_bmgc8")
+
+[node name="Label_titulo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 12.0
+offset_right = 654.0
+offset_bottom = 136.0
+text = "Nightbane"
+label_settings = SubResource("LabelSettings_d8lex")
+
+[node name="Label_subtitulo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 89.0
+offset_right = 1136.0
+offset_bottom = 159.0
+text = "Maldición Eterna"
+label_settings = SubResource("LabelSettings_yo4kt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 182.0
+offset_top = 238.0
+offset_right = 559.0
+offset_bottom = 342.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.8135067, 0, 0.081307165, 1)
+theme_override_font_sizes/font_size = 20
+text = "Iniciar Juego"
+
+[node name="Button_salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.9178061, 0, 0.23313811, 1)
+theme_override_font_sizes/font_size = 20
+text = "Salir"
+
+[connection signal="pressed" from="VBoxContainer/Button_start" to="." method="_on_button_principal_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_salir" to="." method="_on_quit_principal_pressed"]

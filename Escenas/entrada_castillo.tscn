@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt7b7blpncbnt"]
+
+[ext_resource type="Script" uid="uid://bgyyskx7b28e0" path="res://Scripts/entrada_castillo.gd" id="1_ptp1q"]
+[ext_resource type="Texture2D" uid="uid://dan7gqbcjhhv0" path="res://Sprite/base_deteccion/base_negra_final.png" id="1_w0lrg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptp1q"]
+size = Vector2(35, 7)
+
+[node name="Entrada_castillo" type="Area2D"]
+script = ExtResource("1_ptp1q")
+
+[node name="Sprite_entrada" type="Sprite2D" parent="."]
+position = Vector2(-9.536743e-07, 0)
+scale = Vector2(0.099500015, 0.051749986)
+texture = ExtResource("1_w0lrg")
+
+[node name="Collision_entrada" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ptp1q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
