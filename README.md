@@ -36,10 +36,10 @@ Los controles están configurados en el **Input Map** de Godot:
 ---
 
 ## 📂 Estructura del proyecto
-/Escenas → escenas principales (Jugador, Caja, Escenario, HUD).
-/Sprite → sprites del personaje, enemigos y objetos.
-/Scripts → lógica de movimiento, colisiones y HUD.
-/Font → letras utilizadas.
+- /Escenas → escenas principales (Jugador, Caja, Escenario, HUD).
+- /Sprite → sprites del personaje, enemigos y objetos.
+- /Scripts → lógica de movimiento, colisiones y HUD.
+- /Font → letras utilizadas.
 
 ---
 
@@ -49,7 +49,7 @@ Este proyecto se desarrolló con fines educativos. Los sprites utilizados provie
 ---
 
 ## 👤 Autor
-Víctor Alarcón.
-Carrera: Analista Programador.
-Profesor: Juan Pablo Moreno Reyes.
-Inacap, 2025.
+- Víctor Alarcón.
+- Carrera: Analista Programador.
+- Profesor: Juan Pablo Moreno Reyes.
+- Inacap, 2025.
