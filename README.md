@@ -1,4 +1,4 @@
-# Nightbane: Maldición Eterna
+# Desarrollo Videojuego 2D - Nightbane: Maldición Eterna
 
 Un videojuego 2D desarrollado en **Godot 4.5.1** como parte de la asignatura *Desarrollo de Videojuegos* en Inacap.  
 Inspirado en clásicos como **Castlevania** y **Ghosts 'n Goblins**, combina plataformas, acción y aventura con un estilo retro y oscuro.
